@@ -61,4 +61,3 @@ def insertRandomNude(c, username):
     print(statement)
     c.executescript(statement)
 
-getRandomNude()
