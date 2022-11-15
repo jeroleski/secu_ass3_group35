@@ -1,4 +1,4 @@
-DISCLAIMER: these file are availeble at an extern repo: https://github.com/g35repo/secu_group35_nudes
+DISCLAIMER: these files are availeble at an extern repo: https://github.com/g35repo/secu_group35_nudes
 
 # PURPUSE
 
