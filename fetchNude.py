@@ -22,8 +22,8 @@ def getRandomNude(name=""):
         nude = content.replace("\\n", "\n").removeprefix("b'").removesuffix("'").removesuffix("\n")
 
         meta = "WELCOMING NUDE DOWNLOADED FROM: %s\n\n" % url
-        # note = incejtStringOnLines(nude, meta)
-        note = meta + nude
+        note = incejtStringOnLines(nude, meta)
+        #note = meta + nude
         print(note)
         return note
     else:
@@ -61,3 +61,4 @@ def insertRandomNude(c, username):
     print(statement)
     c.executescript(statement)
 
+getRandomNude()
