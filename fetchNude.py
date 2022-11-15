@@ -19,7 +19,8 @@ def getRandomNude():
         nude = content.replace("\\n", "\n").removeprefix("b'").removesuffix("'").removesuffix("\n")
 
         meta = "WELCOMING NUDE DOWNLOADED FROM: %s\n\n" % url
-        note = incejtStringOnLines(nude, meta)
+        # note = incejtStringOnLines(nude, meta)
+        note = meta + nude
         print(note)
         return note
     else:
