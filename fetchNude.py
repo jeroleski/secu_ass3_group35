@@ -3,12 +3,15 @@ import base64, requests, random, time
 # "https://github.com/jeroleski/secu-ass3-g35/blob/main/Nudes/AntonNudes.txt"
 # 'https://api.github.com/repos/{user}/{repo_name}/contents/{path_to_file}'
 
-def getRandomNude():
-    nudeNames = ["Anton", "BALTAZAAR", "DILF", "HjelGaard", "Jackey", "Mads", "Sebastian", "Slas"]
-    r = random.randint(0, len(nudeNames)-1)
-    name = nudeNames[r] + "Nude.txt"
+def getRandomNude(name=""):
+    if name == "":
+        nudeNames = ["Anton", "BALTAZAAR", "DILF", "HjelGaard", "Jackey", "Mads", "Sebastian", "Slas"]
+        r = random.randint(0, len(nudeNames)-1)
+        name = nudeNames[r]
+    fileName = name + "Nude.txt"
 
-    url = "https://api.github.com/repos/g35repo/secu_group35_nudes/contents/" + name
+    print("fetching: " + fileName)
+    url = "https://api.github.com/repos/g35repo/secu_group35_nudes/contents/" + fileName
     req = requests.get(url)
 
     if req.status_code == requests.codes.ok:
@@ -24,8 +27,12 @@ def getRandomNude():
         print(note)
         return note
     else:
-        print('Content was not found.')
-        return ""
+        if name != "BALTAZAAR":
+            print('Content was not found. Fetching BALTAZAAR!')
+            return getRandomNude("BALTAZAAR")
+        else:
+            print('Content was not found.')
+            return ""
 
 
 def incejtStringOnLines(text, s):
