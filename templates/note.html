@@ -1,0 +1,14 @@
+  
+
+  <li class="card notes__card-wrapper">
+    <div class="card-body notes__card-body">
+      <h5 class="card-title notes__card-title">Public Note ID: {{note[4]}}</h5>
+      <h6 class="card-subtitle mb-2 notes__card-subtitle">note written on: <span class="notes__card-subtitle--date ">{{ note[2] }}</span></h6>
+      <p class="card-text">{{ note[3] }}</p>
+      <form action="" method="post">
+        <input hidden name="note_id" value={{note[4]}}/>
+        <input class="card-link card-delete-button btn-outline-sm" type="submit" name="submit_button" value="delete note">
+        </input>
+    </form> 
+    </div>
+  </li>
