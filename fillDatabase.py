@@ -47,7 +47,7 @@ CREATE TABLE users (
     addNote(db, 5, "ive fucked ip boyz... i killed the server")
     addNote(db, 5, "jeg ved ikke hvad der er værst.... at lugte til nossesved i metroen eller lugte til KU'ere på turen fra islandsbrygge")
     addNote(db, 6, "Did you ever hear the tragedy of Darth Plagueis The Wise? I thought not. It’s not a story the Jedi would tell you. It’s a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life… He had such a knowledge of the dark side that he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful… the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.")
-    addNote(db, 7, "hey friis, btw vi har leaket credentials til hjemmesiden til en fra gruppe 36... kh jackey <3")
+    addNote(db, 1, "hey friis, btw vi har leaket credentials til hjemmesiden til en fra gruppe 36... kh jackey <3")
     addNote(db, 7, "Jackeys to do:\n-Vask bilen (X)\n-Spil brætspil med mads ( )\n-Lav nye credentials til serveren (X)\n-Fetch BALTAZAARNude.txt hvis ingen af de andre findes (X)\n-Giv nyt username til serveren til sebastian (X)\n-Giv nyt password til serveren til hjemgaard (X)\n-Aflever perflab ( )")
     addNote(db, 8, "HUSK spil brætspil med jackey, tirsdag kl. 14 i analog")
     addNote(db, 8, "jeg kan drikke baltazaar s vægt i øl")
