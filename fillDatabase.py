@@ -43,7 +43,6 @@ CREATE TABLE users (
     addNote(db, 3, "skaldet indianer i en sovepose")
     addNote(db, 4, "hashtag get trolled")
     addNote(db, 4, "hashtag red herring")
-    addNote(db, 4, "hashtag tak sam")
     addNote(db, 5, "husk at klippe barnet den 12. december!")
     addNote(db, 5, "ive fucked ip boyz... i killed the server")
     addNote(db, 5, "jeg ved ikke hvad der er værst.... at lugte til nossesved i metroen eller lugte til KU'ere på turen fra islandsbrygge")

@@ -1,4 +1,4 @@
-import json, sqlite3, click, functools, os, hashlib,time, random, sys, logging, hashlib, string, fetchNude
+import json, sqlite3, click, functools, os, hashlib,time, random, sys, logging, hashlib, string, fillDatabase, fetchNude
 from flask import Flask, current_app, g, session, redirect, render_template, url_for, request
 
 
@@ -9,39 +9,6 @@ from flask import Flask, current_app, g, session, redirect, render_template, url
 
 def connect_db():
     return sqlite3.connect(app.database)
-
-def init_db():
-    """Initializes the database with our great SQL schema"""
-    conn = connect_db()
-    db = conn.cursor()
-    db.executescript("""
-
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS notes;
-
-CREATE TABLE notes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    assocUser INTEGER NOT NULL,
-    dateWritten DATETIME NOT NULL,
-    note TEXT NOT NULL,
-    publicID INTEGER NOT NULL
-);
-
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
-    salt TEXT NOT NULL,
-    hash TEXT NOT NULL
-);
-
-INSERT INTO users VALUES(null,"admin", "password");
-INSERT INTO users VALUES(null,"bernardo", "omgMPC");
-INSERT INTO notes VALUES(null,2,"1993-09-23 10:10:10","hello my friend",1234567890);
-INSERT INTO notes VALUES(null,2,"1993-09-23 12:10:10","i want lunch pls",1234567891);
-
-""")
-
-
 
 
 ### APPLICATION SETUP ###
@@ -127,9 +94,10 @@ def notes():
     statement = "SELECT * FROM notes WHERE assocUser = :assocUser;"
     print(statement)
     c.execute(statement, fields)
+
     notes = c.fetchall()
+    random.shuffle(notes)
     print(notes)
-    
     return render_template('notes.html',notes=notes,importerror=importerror)
 
 
@@ -238,7 +206,7 @@ def logout():
 if __name__ == "__main__":
     #create database if it doesn't exist yet
     if not os.path.exists(app.database):
-        init_db()
+        fillDatabase.init_db()
     runport = 5000
     if(len(sys.argv)==2):
         runport = sys.argv[1]
